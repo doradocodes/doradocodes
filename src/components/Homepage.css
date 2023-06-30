@@ -1,0 +1,51 @@
+#homepage .canvas {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+}
+
+#homepage .canvas > div {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.arrow-button {
+    border: none;
+    text-decoration: none;
+    color: inherit;
+    background-image: url("arrow.png");
+    background-repeat: no-repeat;
+    height: 100px;
+    width: 10px;
+    background-size: contain;
+    position: absolute;
+    bottom: 10px;
+    left: calc(50% - 5px);
+}
+
+#homepage section:nth-child(even) {
+    align-items: flex-end;
+    text-align: right;
+}
+
+#homepage section p {
+    margin-bottom: 0.25em;
+}
+
+.half-width {
+    max-width: 25vw;
+}
+
+.large_type {
+    font-size: 5vw;
+    /*padding-top: 15vh;*/
+    line-height: 100%;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+#homepage content section {
+    padding: 12vh 1em 0 1em;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}

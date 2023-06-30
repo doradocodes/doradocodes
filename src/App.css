@@ -1,0 +1,22 @@
+*
+{
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background: #f5c579;
+}
+
+html,
+body
+{
+  height: 100vh;
+  /*font-family: 'Space Grotesk', sans-serif;*/
+  font-family: 'Space Mono', monospace;
+
+  font-size: 18px;
+  scroll-behavior: smooth;
+  color: #222222;
+  background: #e1b8a4;
+}
