@@ -1,0 +1,47 @@
+.projectTitle {
+    margin: 0;
+    font-size: 2em;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: bold;
+}
+
+.projectLinks {
+    display: flex;
+    gap: 1em;
+}
+
+.columnWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3em;
+}
+
+@media (max-width: 768px) {
+    .columnWrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.projectImage {
+    border-radius: 5px;
+    width: 100%;
+}
+
+.content {
+    padding: 12vh 1em;
+}
+
+.section {
+    margin-bottom: 5vh;
+}
+
+.sectionTitle {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: bold;
+}

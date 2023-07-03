@@ -1,0 +1,40 @@
+.jumpLinks {
+    display: flex;
+    gap: 2em;
+    margin-bottom: 5vh;
+    justify-content: center;
+}
+
+.h1 {
+    font-size: 5vw;
+    line-height: 100%;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5vh;
+}
+
+.project {
+    border: none;
+}
+
+.section {
+    padding-bottom: 20vh;
+}
+
+.projectImage {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.projectName {
+    margin: 0;
+    font-style: italic;
+}
+
+.content {
+    padding: 12vh 0;
+}
