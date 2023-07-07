@@ -56,7 +56,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                   <nav>
                       <ul>
                           <li><a href={`${links.about.path}`}>About</a></li>
-                          <li><a href={`/#${links.projects.path}`}>Projects</a></li>
+                          <li><a href={`/doradocodes/#${links.projects.path}`}>Projects</a></li>
                           <li><a href={links.contact.path}>Contact</a></li>
                       </ul>
                   </nav>
@@ -65,6 +65,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Routes>
               <Route exact path="/" element={<Homepage/>} />
               <Route path="/projects" element={<Projects/>} /> {/* 👈 Renders at /#/app/ */}
+              <Route path="/projects/:id" element={<ProjectsPage/>} /> {/* 👈 Renders at /#/app/ */}
           </Routes>
       </HashRouter>
   </React.StrictMode>,

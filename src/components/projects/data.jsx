@@ -1,13 +1,22 @@
 export const creativeProjects = {
     'merging-worlds': {
         name: 'Merging Worlds: bridging analog and digital photography (2023)',
-        imageUrl: 'thesis_cover.gif',
+        imageUrl: 'thesis_cover.jpg',
         summary: <p>Inspired by my personal experiences as a software engineer and analog photographer, this project is a personally crafted camera that blends the tactile charm of analog photography with discreet incorporation of digital features.</p>,
         link: 'https://dd3368-thesis.glitch.me/',
         sections: [
             {
+                content: <div>
+                    <div className="flex-wrapper">
+                        <img src="assets/093A5771.jpg" alt="1"/>
+                        <img src="assets/093A5788.jpg" alt="2"/>
+                    </div>
+                </div>
+            },
+            {
                 title: 'Background',
                 content: <div>
+
                     <p>This project originated from my desire to merge two significant aspects of my life: analog photography and software development. Additionally, I aimed to critically examine and enhance the role of social media in sharing photography work. As an online photographer, particularly on platforms like Instagram, I have experienced frustration and discouragement due to the competitive nature of social media algorithms.</p>
                     <p>During the research phase, I broke down the aspects of photography into three parts: photograph-making, photograph-sharing, and photograph-consuming. I explored each of these areas by reading books, prototyping ideas, and reflecting on my own experiences.</p>
                     <p>In the photograph-making phase of my research, I read books from the Ansel Adams Photography Photography Series, which includes The Camera, The Negative, and The Print. Published in the 1950s, each book of the series is a deep dive into the technical aspects of analog photography. The descriptions and diagrams from these books helped me envision the mechanics of an analog camera, and gave me ideas on how to incorporate them into my design.</p>
@@ -36,6 +45,8 @@ export const creativeProjects = {
                     <p>As I embark on the next phase of this project, I look forward to further refining my camera design, experimenting with different techniques, and continuing to challenge the conventions of digital photography. Ultimately, my goal is to inspire others to explore their own passions, break down barriers, and find unique ways to express themselves creatively in an ever-evolving digital landscape.</p>
 
                     <p>This project is a testament to the transformative potential of embracing our passions, blurring boundaries, and forging new paths of artistic exploration. It is a reminder that our journey of self-discovery and creative expression is an ongoing process, one that continues to unfold with each new endeavor.</p>
+                    <video src="assets/thesis_demo_final.mp4" controls />
+
                 </div>
             },
             {
@@ -77,7 +88,7 @@ export const creativeProjects = {
     },
     'ambient-watercolor': {
         name: 'Ambient Watercolor (2022)',
-        imageUrl: 'watercolor_demo_1.gif',
+        imageUrl: 'ambient-watercolor-8.jpeg',
         summary: <p><i>Ambient Watercolor</i> is an experiment with ML5 and generative art. In a calm, tranquil environment, participants can create abstract watercolor paintings using their hands.</p>,
         link: "https://ddo-nyu.github.io/watercolor/",
         github: "",
@@ -85,7 +96,7 @@ export const creativeProjects = {
             {
                 title: 'Background',
                 content: <div>
-                    <p className="smaller-font">The journey to the creation of my final project began at the beginning of the
+                    <p className="smaller-font">The journey to the creation of my final project of the Summer '22 term began at the beginning of the
                         summer session. I already had previous coding experience, so my Creative Coding instructor, Carrie, told
                         me to follow my own curriculum. She encouraged me to experiment with anything I have been previously
                         curious about, so I told her I wanted to learn and experiment more with 3D web graphics (Three.js) and
@@ -94,6 +105,10 @@ export const creativeProjects = {
                     <p className="smaller-font">During the first week of classes, I followed some ThreeJS tutorials which taught
                         me the basics of creating objects, manipulating cameras, and shading. For the first creative coding
                         assignment, “Opposites”, I created a 3D object with alternated turning into a sun or moon.</p>
+                    <div className="flex-wrapper">
+                        <img src="assets/ambient_watercolor_1.png" alt="1" className="image" />
+                        <img src="assets/ambient_watercolor_2.png" alt="2" className="image" />
+                    </div>
                     <p className="smaller-font">While I was experimenting with Three.js in Creative Coding, I was also
                         participating in group exercises in Interface Lab. For one of the exercises, we were tasked with
                         analyzing an existing technological interface. My group chose something simple–the mouse and keyboard.
@@ -111,23 +126,52 @@ export const creativeProjects = {
                         “Opposites” assignment to be a globe. The idea was to be able to rotate the globe horizontally and
                         vertically by moving your hand to the right or left, and to control zoom with two hands (opened to zoom
                         out, closed to zoom in).</p>
+                    <img src="assets/ambient-watercolor-3.gif" alt="3" className="image" />
+                    <p>
+                        While the rotation effect was cool, the purpose of the project felt aimless, and I felt stumped with what to do with it. Putting this idea on hold, I began researching about other topics that I was interested in, which included generative art. I had seen a tutorial about simulating watercolor digitally and using the concept of recursion to form the realistic randomness of analog art. I prototyped the idea in P5 and began to think of ways of bringing the ideas from the tutorial into animation. With animation, I thought of ways that would allow users to interact with generative watercolor art.
+                    </p>
+                    <img src="assets/ambient-watercolor-4.gif" alt="4" className="image" />
+                    <p>We began learning about serial input and output in Interface Lab, and I like the idea of having a physical controller to interact with the watercolor sketch. The original idea for the interaction was to use potentiometers to control the paintbrush. However, after feedback from David, the use of potentiometers can be a cumbersome user experience, and I began to brainstorm different way of interaction.
+                    </p>
+                    <p>
+                        With my learnings from both ml5 and generative art, I ultimately decided to build my final project as a combination of the two. The goal was to give users a calming and tranquil experience playing with digital watercolor. I wanted to allow users to paint with the watercolor brush using hand gestures, but be able to control the brush color with a physical control panel. I wanted to have three potentiometers to represent the red, green, and blue values of the brush’s color.
+                    </p>
+                    <div className="flex-wrapper">
+                        <img src="assets/ambient-watercolor-5.jpeg" alt="5" className="image" />
+                        <img src="assets/ambient-watercolor-6.jpeg" alt="6" className="image" />
+                    </div>
+                    <p>I began building the control panel by laser cutting the design on cardboard. I wanted to see if the board would stand up at an angle, so that the slanted surface will feel comfortable for the user. After seeing how it would stand with cardboard, I cut a piece of acrylic, and began wiring the breadboard to hook up the potentiometers. While I was adding the potentiometers, my classmate, Ai, suggested that I added LEDs to bring more visuals to the panel. Excited about the idea, I cut another piece of acrylic with holes for the LEDs.</p>
+                    <img src="assets/ambient-watercolor-7.jpeg" alt="7" className="image" />
+                    <p>This is the final result of the control panel (without the LEDs wired up). Ultimately I was satisfied with the simple, color coordinated user interface. Wiring the LEDs was the tricky part, because soldering wires to connect the LEDs that were superglued underneath the panel was difficult.</p>
+                    <img src="assets/ambient-watercolor-8.jpeg" alt="8" className="image" />
+                    <p>As a final piece to this project, I added sound to put the user in the desired calm and tranquil headspace. I recorded some ambient sound notes on Garageband and added the sound every time a new brush stroke started on the screen. </p>
+                    <p>Here are some examples of user testing the project:</p>
+                    <div className="flex-wrapper">
+                        <img src="assets/ambient-watercolor-9.gif" alt="9" className="image" />
+                        <img src="assets/ambient-watercolor-10.gif" alt="10" className="image" />
+                        <img src="assets/ambient-watercolor-11.gif" alt="11" className="image"/>
+                        <img src="assets/ambient-watercolor-12.gif" alt="12" className="image"/>
+                    </div>
                 </div>,
             }
         ]
     },
     'golden-hour-clock': {
         name: 'Golden Hour Clock (2023)',
+        imageUrl: 'golden_hour.jpeg'
     },
     '50-days-of-blender': {
         name: '50 Days of Blender (2023)',
+        imageUrl: 'day36.png',
+
     },
     'digital-yearbook': {
         name: 'Digital Yearbook (2022)',
-
+        imageUrl: 'digital_yearbook.png'
     },
     'verdant': {
         name: 'Verdant (2023)',
-
+        imageUrl: 'verdant_cover.png'
     }
 };
 

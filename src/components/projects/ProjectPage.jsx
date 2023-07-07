@@ -10,7 +10,7 @@ export default function ProjectsPage() {
         <div className={classNames('content', styles.content)}>
             <div className={styles.columnWrapper}>
                 <div className={styles.column}>
-                    <img className={styles.projectImage} src={`/assets/${project.imageUrl}`} alt="Ambient Watercolor"/>
+                    <img className={styles.projectImage} src={`/assets/${project.imageUrl}`} alt={project.title}/>
                 </div>
                 <div className={styles.column}>
                     <h1 className={styles.projectTitle}><i>{project.name}</i></h1>
