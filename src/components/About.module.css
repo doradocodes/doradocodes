@@ -1,0 +1,25 @@
+.content {
+    padding: 12vh 1em;
+}
+
+.flexWrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3em;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .flexWrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+.profileImg {
+    border-radius: 10px;
+    width: 100%;
+}
+
+.paragraph {
+    margin: 0;
+}
