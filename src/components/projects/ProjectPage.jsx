@@ -15,7 +15,7 @@ export default function ProjectsPage() {
                 <div className={styles.column}>
                     <h1 className={styles.projectTitle}><i>{project.name}</i></h1>
                     <p className={styles.projectLinks}>
-                        {project.link && <a href={project.link}>Demo</a>}
+                        {project.link}
                         {project.github && <a href={project.github}>Github</a>}
                     </p>
                     {project.summary}

@@ -3,6 +3,7 @@ import {Canvas} from "@react-three/fiber";
 import styles from './Homepage.module.css';
 import classNames from "classnames";
 import {useRef} from "react";
+import {Link} from "react-router-dom";
 
 export default function Homepage() {
     const section1Ref = useRef(null);
@@ -57,10 +58,9 @@ export default function Homepage() {
                 <h1 className={styles.h1}>See my projects</h1>
                 <div>
                     <p className={styles.paragraph}>Check out my creative and professional projects. </p>
-                    <div className="jump-links">
-                        <a href="#creative-projects">Creative projects</a> <a href="#professional-projects">Professional
-                        projects</a>
-                    </div>
+                    <p className="jump-links">
+                        <Link to="/projects">Projects</Link>
+                    </p>
                     <a className={styles.arrowButton} onClick={(e) => executeScroll(e, section4Ref)} aria-label="Next"></a>
                 </div>
             </section>
