@@ -1,38 +1,50 @@
-import Laptop from "../Laptop.jsx";
 import {Canvas} from "@react-three/fiber";
 import styles from './Homepage.module.css';
 import classNames from "classnames";
-import {useRef} from "react";
+import {useEffect, useRef, useState} from "react";
 import {Link} from "react-router-dom";
+import {Laptop2} from "../Laptop2.jsx";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+
+gsap.registerPlugin(ScrollTrigger);
+
 
 export default function Homepage() {
+    const [activeSection, setActiveSection] = useState('section1');
     const section1Ref = useRef(null);
     const section2Ref = useRef(null);
     const section3Ref = useRef(null);
     const section4Ref = useRef(null);
 
+
+    useEffect(() => {
+        gsap.to(section2Ref.current, {
+            x: 100,
+            scrollTrigger: {
+                trigger: section2Ref.current,
+                // onEnter: ({progress, direction, isActive}) => console.log(progress, direction, isActive),
+                onToggle: ({ isActive }) => {
+                    if (isActive) {
+                        setActiveSection('section2');
+                    } else {
+                        setActiveSection('section1');
+                    }
+                }
+            }
+        });
+    }, []);
     const executeScroll = (e, currentRef) => {
         e.preventDefault();
         currentRef.current.scrollIntoView()
     }
 
     return <div
-        className="page"
+        className={classNames('page', styles.page)}
         id="homepage"
-        // style={{
-        //     width: "100vw",
-        //     height: "100vh",
-        //     position: "fixed",
-        //     top: 0,
-        //     left: 0,
-        // }}
     >
-        <Canvas className={styles.canvas}>
-            <ambientLight />
-            <pointLight position={[10, 10, 10]} />
-            <Laptop  />
-        </Canvas>
-        <div className="content">
+        <div className={classNames('content')}>
             <section className={styles.section} ref={section1Ref}>
                 <h1 className={classNames(styles.h1, styles.h1Desktop)}>Hi I’m Dora, a Creative Technologist based in NYC.</h1>
                 <h1 className={classNames(styles.h1, styles.h1Mobile)}>Hi, I'm Dora.</h1>
@@ -74,5 +86,10 @@ export default function Homepage() {
                 </div>
             </section>
         </div>
+        <Canvas className={styles.canvas}>
+            <ambientLight />
+            <pointLight position={[10, 10, 10]} />
+            <Laptop2 sectionName={activeSection}/>
+        </Canvas>
     </div>
 }

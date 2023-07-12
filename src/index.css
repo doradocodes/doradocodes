@@ -13,7 +13,8 @@
   scroll-behavior: smooth;
 
   --font-color: #213446;
-  --background-color: #e1b8a4;
+  --background-color: rgb(184, 255, 226);
+  --background-image: url('assets/mesh-gradient.png');
 }
 
 html, body {
@@ -110,11 +111,16 @@ nav ul li {
 
 .content {
   padding: 0 1em;
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .page {
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
 }
 
 video {
@@ -135,4 +141,13 @@ img {
   .flex-wrapper {
     grid-template-columns: 1fr;
   }
+}
+
+#gradient {
+  position: fixed;
+  top: 0;
+  left: 0;
+  /*z-index: -1;*/
+  height: 100%;
+  width: 100%;
 }

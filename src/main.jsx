@@ -12,6 +12,9 @@ import ProjectsPage from "./components/projects/ProjectPage.jsx";
 import About from "./components/About.jsx";
 import Contact from "./components/Contact.jsx";
 import Header from "./components/Header.jsx";
+import Gradient from "./components/GradientBackground.jsx";
+
+new Gradient();
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
