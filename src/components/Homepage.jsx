@@ -20,20 +20,20 @@ export default function Homepage() {
 
 
     useEffect(() => {
-        gsap.to(section2Ref.current, {
-            x: 100,
-            scrollTrigger: {
-                trigger: section2Ref.current,
-                // onEnter: ({progress, direction, isActive}) => console.log(progress, direction, isActive),
-                onToggle: ({ isActive }) => {
-                    if (isActive) {
-                        setActiveSection('section2');
-                    } else {
-                        setActiveSection('section1');
-                    }
-                }
-            }
-        });
+        // gsap.to(section2Ref.current, {
+        //     x: 100,
+        //     scrollTrigger: {
+        //         trigger: section2Ref.current,
+        //         // onEnter: ({progress, direction, isActive}) => console.log(progress, direction, isActive),
+        //         onToggle: ({ isActive }) => {
+        //             if (isActive) {
+        //                 setActiveSection('section2');
+        //             } else {
+        //                 setActiveSection('section1');
+        //             }
+        //         }
+        //     }
+        // });
     }, []);
     const executeScroll = (e, currentRef) => {
         e.preventDefault();
@@ -87,8 +87,9 @@ export default function Homepage() {
             </section>
         </div>
         <Canvas className={styles.canvas}>
-            <ambientLight />
-            <pointLight position={[10, 10, 10]} />
+            <ambientLight intensity={1} />
+            {/*<pointLight position={[10, 10, 10]} intensity={1} />*/}
+            <directionalLight position={[0, 0, 10]} />
             <Laptop2 sectionName={activeSection}/>
         </Canvas>
     </div>

@@ -1,21 +1,23 @@
 const COLORS = [
-    '184, 255, 226',
-    '204, 255, 218',
-    '277, 204, 255',
-    '235, 199, 255'
+    '253,170,136',
+    '224,33,64',
+    '234,210,146',
+    '126,177,168'
 ];
 
 export default class Gradient {
     constructor(canvas) {
         this.canvas = document.createElement('canvas');
         this.canvas.id = 'gradient';
-        document.body.appendChild(this.canvas);
+        // document.body.appendChild(this.canvas);
+        document.querySelector('.background').appendChild(this.canvas);
         this.ctx = this.canvas.getContext('2d');
 
         this.pixelRatio = (window.devicePixelRatio > 1) ? 2 : 1;
         this.totalParticles = 10;
         this.particles = [];
-        this.maxRadius = window.innerWidth / 1.5;
+        this.maxRadius = window.innerWidth > window.innerHeight ? window.innerWidth / 2 : window.innerHeight / 2;
+        this.speed = 5;
 
         // document.body.style = `background: rgb(${COLORS[getRandomArbitrary(0, COLORS.length - 1)]})`;
 
@@ -58,7 +60,7 @@ export default class Gradient {
 
         for (let i = 0; i < this.particles.length; i++) {
             // console.log('x', this.particles[i].x, 'y', this.particles[i].y)
-            if (this.particles[i].x >= window.innerWidth) {
+            if (this.particles[i].x >= window.innerWidth ) {
                 this.particles[i].xDirection = -1;
             } else if (this.particles[i].x <= 0) {
                 this.particles[i].xDirection = 1;
@@ -70,13 +72,13 @@ export default class Gradient {
                 this.particles[i].yDirection = 1;
             }
 
-            this.particles[i].x += 10 * this.particles[i].xDirection;
-            this.particles[i].y += 10 * this.particles[i].yDirection;
+            this.particles[i].x += this.speed * this.particles[i].xDirection;
+            this.particles[i].y += this.speed * this.particles[i].yDirection;
             this.particles[i].draw();
         }
 
 
-        window.requestAnimationFrame(() => this.animate());
+        // window.requestAnimationFrame(() => this.animate());
     }
 
 }
