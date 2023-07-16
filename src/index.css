@@ -41,7 +41,7 @@ html, body {
   left: 0;
   height: 100%;
   width: 100%;
-  /*background-color: rgba(255,255,255,0.1);*/
+  /*background-color: rgba(0,0,0,0.2);*/
 }
 
 .background:after {
@@ -51,7 +51,8 @@ html, body {
   left: 0;
   height: 100%;
   width: 100%;
-  background-image: url('https://grainy-gradients.vercel.app/noise.svg');
+  opacity: 0.3;
+  background-image: url('assets/noise.svg');
 }
 
 h1 {
@@ -138,6 +139,7 @@ nav ul li {
 }
 
 .content {
+  width: 100%;
   padding: 0 1em;
   z-index: 2;
   position: absolute;

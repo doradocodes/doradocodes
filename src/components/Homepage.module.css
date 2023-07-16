@@ -58,7 +58,7 @@
 }
 
 .paragraphDesktop {
-
+    font-size: 1.1em;
 }
 
 @media (max-width: 768px) {
@@ -81,7 +81,7 @@
 }
 
 .h1Desktop {
-
+    max-width: 1000px;
 }
 
 .h1Mobile {

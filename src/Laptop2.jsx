@@ -1,5 +1,5 @@
 import {useState} from "react";
-import { useGLTF } from "@react-three/drei";
+import {useGLTF, useTexture} from "@react-three/drei";
 import {animated, useScroll} from '@react-spring/three'
 import {useLoader} from "@react-three/fiber";
 import {TextureLoader} from "three";
@@ -7,6 +7,7 @@ import Gradient from "./components/GradientBackground.jsx";
 
 const gradient = new Gradient();
 export function Laptop2({ sectionName }) {
+    console.log(sectionName);
     const [scrollVal, setScrollVal] = useState(0); // [0, 1
     useScroll({
         onChange: ({ value: { scrollYProgress } }) => {
@@ -15,11 +16,10 @@ export function Laptop2({ sectionName }) {
             gradient.animate();
         }
     });
-    const { nodes, materials } = useGLTF("laptop_10.glb");
-    const imageMap = useLoader(TextureLoader, 'assets/day36.png');
-    // imageMap.rotation = Math.PI * 0.25;
-    // imageMap.repeat = 1;
-    // imageMap.wrapS = 1000;
+    const { nodes, materials } = useGLTF("laptop_11_test.glb");
+
+    const imageMap = useTexture(`assets/${sectionName}.png`)
+    imageMap.repeat.set(1,1);
     return (
             <animated.group
                 dispose={null}
@@ -40,13 +40,9 @@ export function Laptop2({ sectionName }) {
                     geometry={nodes.Cube001_1.geometry}
                     material={materials["Material.011"]}
                 />
-                <mesh // screen
-                    castShadow
-                    receiveShadow
-                    geometry={nodes.laptop001.geometry}
-                    material={materials["Material.011"]}
-                >
-                    {/*<meshStandardMaterial map={imageMap}  />*/}
+                <mesh position={[0,0.95,-0.95]} rotation={[-0.12,0,0]}>
+                    <planeBufferGeometry attach="geometry" args={[2.6, 1.6]} />
+                    <meshPhongMaterial attach="material" map={imageMap} />
                 </mesh>
             </animated.group>
 

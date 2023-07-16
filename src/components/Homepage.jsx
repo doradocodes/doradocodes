@@ -4,13 +4,6 @@ import classNames from "classnames";
 import {useEffect, useRef, useState} from "react";
 import {Link} from "react-router-dom";
 import {Laptop2} from "../Laptop2.jsx";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-
-gsap.registerPlugin(ScrollTrigger);
-
-
 export default function Homepage() {
     const [activeSection, setActiveSection] = useState('section1');
     const section1Ref = useRef(null);
@@ -20,20 +13,21 @@ export default function Homepage() {
 
 
     useEffect(() => {
-        // gsap.to(section2Ref.current, {
-        //     x: 100,
-        //     scrollTrigger: {
-        //         trigger: section2Ref.current,
-        //         // onEnter: ({progress, direction, isActive}) => console.log(progress, direction, isActive),
-        //         onToggle: ({ isActive }) => {
-        //             if (isActive) {
-        //                 setActiveSection('section2');
-        //             } else {
-        //                 setActiveSection('section1');
-        //             }
-        //         }
-        //     }
-        // });
+        window.addEventListener('scroll', (e) => {
+            const pageYOffset = e.currentTarget.pageYOffset + e.currentTarget.innerHeight * 0.5
+            const getBoundingClientRect = (ref) => {
+                return ref.current.offsetTop + ref.current.offsetHeight;
+            }
+            if (pageYOffset >= 0 && pageYOffset < getBoundingClientRect(section1Ref)) {
+                setActiveSection('section1')
+            } else if (pageYOffset >= section2Ref.current.offsetTop && pageYOffset < getBoundingClientRect(section2Ref)) {
+                setActiveSection('section2')
+            } else if (pageYOffset >= section3Ref.current.offsetTop && pageYOffset < getBoundingClientRect(section3Ref)) {
+                setActiveSection('section3')
+            } else if (pageYOffset >= section4Ref.current.offsetTop && pageYOffset < getBoundingClientRect(section4Ref)) {
+                setActiveSection('section4')
+            }
+        });
     }, []);
     const executeScroll = (e, currentRef) => {
         e.preventDefault();
@@ -59,10 +53,10 @@ export default function Homepage() {
             <section id="about" className={styles.section} ref={section2Ref}>
                 <h1 className={styles.h1}>More about me</h1>
                 <div>
-                    <p className={styles.paragraph}>I came from a background in Computer Science and spent a decade building
+                    <p className={styles.paragraph}>Coming from a background in Computer Science, I spent a decade building
                         robust, scalable web applications for well known tech companies.</p>
-                    <p className={styles.paragraph}>More recently, I graduated with a Masters of Arts in Interactive Media Arts at
-                        NYU, focusing on building unique interactive experiences.</p>
+                    <p className={styles.paragraph}>More recently, I graduated with a M.A. in Interactive Media Arts at
+                        NYU, focusing on creating unique interactive experiences.</p>
                     <a className={styles.arrowButton} onClick={(e) => executeScroll(e, section3Ref)} aria-label="Next"></a>
                 </div>
             </section>
@@ -87,7 +81,7 @@ export default function Homepage() {
             </section>
         </div>
         <Canvas className={styles.canvas}>
-            <ambientLight intensity={1} />
+            <ambientLight intensity={0.5} />
             {/*<pointLight position={[10, 10, 10]} intensity={1} />*/}
             <directionalLight position={[0, 0, 10]} />
             <Laptop2 sectionName={activeSection}/>

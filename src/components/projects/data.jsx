@@ -7,7 +7,7 @@ export const creativeProjects = {
         summary: <p>Inspired by my personal experiences as a software engineer and analog photographer, this project is
             a personally crafted camera that blends the tactile charm of analog photography with discreet incorporation
             of digital features.</p>,
-        link: <a href='https://dd3368-thesis.glitch.me/'>Demo</a>,
+        link: <a target="_blank" href='https://dd3368-thesis.glitch.me/'>Demo</a>,
         sections: [
             {
                 content: <div>
@@ -176,7 +176,7 @@ export const creativeProjects = {
         imageUrl: 'ambient-watercolor-8.jpeg',
         summary: <p><i>Ambient Watercolor</i> is an experiment with ML5 and generative art. In a calm, tranquil
             environment, participants can create abstract watercolor paintings using their hands.</p>,
-        link: <a href="https://ddo-nyu.github.io/watercolor/">Demo</a>,
+        link: <a target="_blank" href="https://ddo-nyu.github.io/watercolor/">Demo</a>,
         github: "",
         sections: [
             {
@@ -337,7 +337,7 @@ export const creativeProjects = {
     '50-days-of-blender': {
         name: '50 Days of Blender (2023)',
         imageUrl: 'day36.png',
-        link: <a href='https://www.instagram.com/3dncozy/'>Instagram</a>,
+        link: <a target="_blank" href='https://www.instagram.com/3dncozy/'>Instagram</a>,
         summary: <p><i>50 Days of Blender (2023)</i> is a challenge to create a 3D render everyday for 50 days.</p>,
         sections: [
             {
@@ -420,7 +420,7 @@ export const creativeProjects = {
     'digital-yearbook': {
         name: 'Digital Yearbook (2022)',
         imageUrl: 'digital_yearbook.png',
-        link: <a href="https://dot-mellow-mandevilla.glitch.me/">Demo</a>,
+        link: <a target="_blank" href="https://dot-mellow-mandevilla.glitch.me/">Demo</a>,
         github: 'https://github.com/ddo-nyu/digital-yearbook',
         summary: <p><i>Digital Yearbook</i> is an attempt to bring a cherished physical object to the digital space,
             allowing for modern features to track our memories.</p>,
@@ -472,6 +472,7 @@ export const creativeProjects = {
     'verdant': {
         name: 'Verdant (2023)',
         imageUrl: 'verdant_cover.png',
+        link: <a target="_blank" href="https://ddonyu.itch.io/verdant">Demo</a>,
         sections: []
     }
 };
@@ -479,11 +480,86 @@ export const creativeProjects = {
 export const professionalProjects = {
     'kodak-moments': {
         name: 'Kodak Moments',
+        link: <a target="_blank" href="https://www.kodakmoments.com/">Visit</a>,
+        imageUrl: 'kodak_moments_1.png',
+        summary: <p>
+            KodakMoments.com is a website where customers can create unique, personalized photo gifts for their loved ones. As the lead Front-end engineer, I was responsible for developing and maintaining all aspects of the website, including page layouts, product creation tools, and shopping carts. Displayed below is the flow to create a canvas print. The user uploads a photo and is taken to screen where the photo can be edited and previewed on the product. Visit this website at <a href="https://www.kodakmoments.com/"><b>kodakmoments.com</b></a>.
+        </p>,
+        sections: [{
+            title: 'Sample Screens',
+            content: <div className="flex-wrapper">
+                <div>
+                    <img src="assets/kodak_moments_1.png" alt="KodakMoments.com"/>
+                    <p>The Home Page of the Kodak Moments. The user first enters the website here and is show the latest discounts and featured products.</p>
+                </div>
+                <div>
+                    <img src="assets/kodak_moments_2.png" alt="KodakMoments.com"/>
+                    <p>The Product Description Page of customized Canvas Prints. Users can see a sample of the quality of the products and can choose a size to create a print with.</p>
+                </div>
+                <div>
+                    <img src="assets/kodak_moments_3.png" alt="KodakMoments.com"/>
+                    <p>The Upload page allows users to upload their desired images to the placed on the product. Users can upload as many photos as they want, and all uploaded images be saved for use on other products.</p>
+                </div>
+                <div>
+                    <img src="assets/kodak_moments_4.png" alt="KodakMoments.com"/>
+                    <p>The Editing page is where users can crop, rotate, or apply filters to their photos.</p>
+                </div>
+                <div>
+                    <img src="assets/kodak_moments_5.png" alt="KodakMoments.com"/>
+                    <p>The Preview page is where users can view a 3D preview of their product and confirm their changes before adding it to their cart.</p>
+                </div>
+                <div>
+                    <img src="assets/kodak_moments_6.png" alt="KodakMoments.com"/>
+                    <p>Once the user adds their product to their cart, they are redirected to the Cart page. They can continue to create more products and add it to their Cart. When they are ready to purchase, they can return to this page by clicking the Card icon in the top right of the page, and continue to checkout.</p>
+                </div>
+
+            </div>
+        }],
     },
     'grappling-inhouse': {
         name: 'Grappling Inhouse',
+        imageUrl: 'gih-1.png',
+        summary: <p>
+            Grappling-InHouse.com is a social media website that lets recreational Grappling gyms create leagues, teams, and tournaments. It is a online community that brings together casual fighters who enjoy participating in competitive atmosphere. Since the intended users were had various backgrounds, I wanted to ensure there was simple and easy navigation. I wanted the design to look clean and simple to be unintimidating to users who were used to analog organization of these leagues. Visit this website at grappling-inhouse.com.
+        </p>,
+        sections: [{
+            title: 'Sample Screens',
+            content: <div className="flex-wrapper">
+                <div>
+                    <img src="assets/kodak_moments_1.png" alt="KodakMoments.com"/>
+                    <p>The Home Page of the Kodak Moments. The user first enters the website here and is show the latest discounts and featured products.</p>
+                </div>
+                <div>
+                    <img src="assets/kodak_moments_2.png" alt="KodakMoments.com"/>
+                    <p>The Product Description Page of customized Canvas Prints. Users can see a sample of the quality of the products and can choose a size to create a print with.</p>
+                </div>
+                <div>
+                    <img src="assets/kodak_moments_3.png" alt="KodakMoments.com"/>
+                    <p>The Upload page allows users to upload their desired images to the placed on the product. Users can upload as many photos as they want, and all uploaded images be saved for use on other products.</p>
+                </div>
+                <div>
+                    <img src="assets/kodak_moments_4.png" alt="KodakMoments.com"/>
+                    <p>The Editing page is where users can crop, rotate, or apply filters to their photos.</p>
+                </div>
+                <div>
+                    <img src="assets/kodak_moments_5.png" alt="KodakMoments.com"/>
+                    <p>The Preview page is where users can view a 3D preview of their product and confirm their changes before adding it to their cart.</p>
+                </div>
+                <div>
+                    <img src="assets/kodak_moments_6.png" alt="KodakMoments.com"/>
+                    <p>Once the user adds their product to their cart, they are redirected to the Cart page. They can continue to create more products and add it to their Cart. When they are ready to purchase, they can return to this page by clicking the Card icon in the top right of the page, and continue to checkout.</p>
+                </div>
+
+            </div>
+        }],
     },
     'square': {
         name: 'Square',
+        imageUrl: 'square_1.png',
+        summary: <p>
+            At Square, I worked closely with the Marketing Creative team to implement new features and pages for the squareup.com website.
+        </p>,
+        sections: [{
+        }],
     }
 }

@@ -9,7 +9,7 @@
     font-size: 5vw;
     line-height: 100%;
     font-family: 'Space Grotesk', sans-serif;
-    /*padding: 0 1em;*/
+    margin: 0 0 2rem 0;
 }
 
 .projects {
@@ -36,7 +36,7 @@
 .projectImage {
     width: 100%;
     border-radius: 5px;
-    height: 20vh;
+    height: 25vh;
     object-fit: cover;
     object-position: center center;
     filter: grayscale(1);

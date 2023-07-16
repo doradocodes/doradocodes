@@ -1,10 +1,16 @@
-import {Link} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 import styles from "./Projects.module.css";
 import {creativeProjects, professionalProjects} from "./projects/data.jsx";
 import classNames from "classnames";
-import {useRef} from "react";
+import {useEffect, useRef} from "react";
 
 export default function Projects() {
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
+
     const creativeProjectRef = useRef(null);
     const professionalProjectRef = useRef(null);
     const executeScroll = (e, currentRef) => {
@@ -37,7 +43,7 @@ export default function Projects() {
                     {
                         Object.keys(professionalProjects).map((id, i) => {
                             const project = professionalProjects[id];
-                            return <Link key={i} className={styles.project} to={`/doradocodes/projects/${id}`}>
+                            return <Link key={i} className={styles.project} to={`/projects/${id}`}>
                                 <img className={styles.projectImage} src={`/assets/${project.imageUrl}`} alt={project.name}/>
                                 <p className={styles.projectName}>{project.name}</p>
                             </Link>

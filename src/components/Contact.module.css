@@ -1,3 +1,10 @@
 .content {
     padding: 12vh 1em;
 }
+
+.h1 {
+    font-size: 5vw;
+    line-height: 100%;
+    font-family: 'Space Grotesk', sans-serif;
+    margin: 0 0 2rem 0;
+}

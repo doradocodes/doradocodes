@@ -100,7 +100,7 @@ class Particle {
 
     draw() {
         this.ctx.beginPath();
-        const g = this.ctx.createRadialGradient(this.x, this.y, this.radius * 0.01, this.x, this.y, this.radius);
+        const g = this.ctx.createRadialGradient(this.x, this.y, this.radius * 0.25, this.x, this.y, this.radius);
         g.addColorStop(0, `rgba(${this.color}, 1)`);
         g.addColorStop(1, `rgba(${this.color}, 0)`);
         this.ctx.fillStyle = g;

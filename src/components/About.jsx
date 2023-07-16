@@ -7,7 +7,7 @@ export default function About() {
             <div className={styles.flexWrapper}>
                 <img className={styles.profileImg} src="assets/profile.JPG" alt="profile picture"/>
                 <div>
-                    <h1>About Me</h1>
+                    <h1 className={styles.h1}>About Me</h1>
                     <p className={styles.paragraph}>
                         I started my journey into technology at a young age. Growing up in the Silicon Valley and raised engineers, I had a unique childhood that embraced using the latest technology and theorizing the future of it.
                     </p>
