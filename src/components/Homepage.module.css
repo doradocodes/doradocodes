@@ -103,6 +103,7 @@
     display: flex;
     flex-direction: column;
     padding: 12vh 0;
+    scroll-snap-align: start;
 }
 
 @media (max-width: 768px) {

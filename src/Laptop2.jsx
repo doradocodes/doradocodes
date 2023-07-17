@@ -23,7 +23,7 @@ export function Laptop2({ sectionName }) {
     return (
             <animated.group
                 dispose={null}
-                scale={0.9}
+                scale={1}
                 rotation-x={Math.PI * 0.1}
                 rotation-y={scrollVal}
                 rotation-z={Math.PI * 0.05}
@@ -49,4 +49,4 @@ export function Laptop2({ sectionName }) {
     );
 }
 
-useGLTF.preload("laptop_4.glb");
+useGLTF.preload("laptop_11_test.glb");
