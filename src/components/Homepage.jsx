@@ -2,21 +2,25 @@ import {Canvas} from "@react-three/fiber";
 import styles from './Homepage.module.css';
 import classNames from "classnames";
 import {useEffect, useRef, useState} from "react";
-import {Link} from "react-router-dom";
-import {Laptop2} from "../Laptop2.jsx";
+import {Link, useLocation} from "react-router-dom";
+import {Laptop} from "../Laptop.jsx";
 export default function Homepage() {
+    const { pathname } = useLocation();
     const [activeSection, setActiveSection] = useState('section1');
     const section1Ref = useRef(null);
     const section2Ref = useRef(null);
     const section3Ref = useRef(null);
     const section4Ref = useRef(null);
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
 
     useEffect(() => {
         window.addEventListener('scroll', (e) => {
             const pageYOffset = e.currentTarget.pageYOffset + e.currentTarget.innerHeight * 0.5
             const getBoundingClientRect = (ref) => {
-                return ref.current.offsetTop + ref.current.offsetHeight;
+                return ref.current?.offsetTop + ref.current?.offsetHeight;
             }
             if (pageYOffset >= 0 && pageYOffset < getBoundingClientRect(section1Ref)) {
                 setActiveSection('section1')
@@ -29,6 +33,7 @@ export default function Homepage() {
             }
         });
     }, []);
+
     const executeScroll = (e, currentRef) => {
         e.preventDefault();
         currentRef.current.scrollIntoView()
@@ -84,7 +89,7 @@ export default function Homepage() {
             <ambientLight intensity={0.5} />
             {/*<pointLight position={[10, 10, 10]} intensity={1} />*/}
             <directionalLight position={[0, 0, 10]} />
-            <Laptop2 sectionName={activeSection}/>
+            <Laptop sectionName={activeSection}/>
         </Canvas>
     </div>
 }

@@ -1,39 +1,50 @@
-import {useGLTF} from "@react-three/drei";
-import {useLayoutEffect, useRef, useState} from "react";
-import {gsap} from "gsap";
-import {useFrame, useLoader} from "@react-three/fiber";
-import { motion } from "framer-motion-3d"
-import {useMotionValueEvent, useScroll, useSpring} from "framer-motion"
-import {GLTFLoader} from "three/addons/loaders/GLTFLoader.js";
+import {useState} from "react";
+import {useGLTF, useTexture} from "@react-three/drei";
+import {animated, useScroll} from '@react-spring/three'
+import Gradient from "./components/GradientBackground.jsx";
 
+const gradient = new Gradient();
+export function Laptop({ sectionName }) {
+    console.log(sectionName);
+    const [scrollVal, setScrollVal] = useState(0); // [0, 1
+    useScroll({
+        onChange: ({ value: { scrollYProgress } }) => {
+            const newVal = Math.PI * 6 * scrollYProgress;
+            setScrollVal(newVal);
+            gradient.animate();
+        }
+    });
+    const { nodes, materials } = useGLTF("laptop_11_test.glb");
 
-export default function Laptop(props) {
-    // const glft = useGLTF('laptop_4.glb');
-    // const ref = useRef();
-    //
-    // const { scrollYProgress } = useScroll()
-    // const rotateYSpring = useSpring(scrollYProgress, {
-    //     stiffness: 100,
-    //     damping: 30,
-    //     restDelta: 0.001
-    // })
-    //
-    // return (
-    //     <group {...props} >
-    //         <motion.primitive
-    //             ref={ref}
-    //             object={glft.scene}
-    //             position-x={0}
-    //             position-y={-0.5}
-    //             position-z={-2.5}
-    //             rotation-x={Math.PI * 0.1}
-    //             rotation-y={rotateYSpring}
-    //             rotation-z={-0.15}
-    //             scale-x={1.5}
-    //             scale-y={1.5}
-    //             scale-z={1.5}
-    //
-    //         />
-    //     </group>
-    // );
+    const imageMap = useTexture(`assets/${sectionName}.png`)
+    imageMap.repeat.set(1,1);
+    return (
+            <animated.group
+                dispose={null}
+                scale={1}
+                rotation-x={Math.PI * 0.1}
+                rotation-y={scrollVal}
+                rotation-z={Math.PI * 0.05}
+            >
+                <mesh
+                    castShadow
+                    receiveShadow
+                    geometry={nodes.Cube001.geometry}
+                    material={materials["Material.010"]}
+                />
+                <mesh // keyboard
+                    castShadow
+                    receiveShadow
+                    geometry={nodes.Cube001_1.geometry}
+                    material={materials["Material.011"]}
+                />
+                <mesh position={[0,0.95,-0.95]} rotation={[-0.12,0,0]}>
+                    <planeBufferGeometry attach="geometry" args={[2.6, 1.6]} />
+                    <meshPhongMaterial attach="material" map={imageMap} />
+                </mesh>
+            </animated.group>
+
+    );
 }
+
+useGLTF.preload("laptop_11_test.glb");
