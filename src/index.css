@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;700&family=Space+Mono:ital@0;1&display=swap');
 
+.tp-dfwv {
+  z-index: 1000;
+  position: fixed !important;
+}
+
 :root {
   font-family: 'Space Mono', monospace;
   line-height: 1.5;

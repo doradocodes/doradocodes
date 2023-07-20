@@ -5,7 +5,6 @@ import Gradient from "./components/GradientBackground.jsx";
 
 const gradient = new Gradient();
 export function Laptop({ sectionName }) {
-    console.log(sectionName);
     const [scrollVal, setScrollVal] = useState(0); // [0, 1
     useScroll({
         onChange: ({ value: { scrollYProgress } }) => {

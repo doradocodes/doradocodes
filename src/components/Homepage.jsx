@@ -4,6 +4,7 @@ import classNames from "classnames";
 import {useEffect, useRef, useState} from "react";
 import {Link, useLocation} from "react-router-dom";
 import {Laptop} from "../Laptop.jsx";
+import {useTweaks} from "use-tweaks";
 export default function Homepage() {
     const { pathname } = useLocation();
     const [activeSection, setActiveSection] = useState('section1');
@@ -38,6 +39,15 @@ export default function Homepage() {
         e.preventDefault();
         currentRef.current.scrollIntoView()
     }
+    // const { intensity, xPos, yPos, zPos, xRot, yRot, zRot } = useTweaks({
+    //     xPos: { value: 1.09, min:0, max: 10 },
+    //     yPos: { value: 0, min:0, max: 10 },
+    //     zPos: { value: 6.3, min:0, max: 10 },
+    //     intensity: { value: 0.68, min: 0, max: 1 },
+    //     xRot: { value: 0, min:0, max: 10 },
+    //     yRot: { value: 0, min:0, max: 10 },
+    //     zRot: { value: 0, min:0, max: 10 },
+    // })
 
     return <div
         className={classNames('page', styles.page)}
@@ -86,9 +96,13 @@ export default function Homepage() {
             </section>
         </div>
         <Canvas className={styles.canvas}>
-            <ambientLight intensity={0.5} />
-            {/*<pointLight position={[10, 10, 10]} intensity={1} />*/}
-            <directionalLight position={[0, 0, 10]} />
+            <ambientLight
+                intensity={0.68}
+            />
+            {/*<pointLight position={[xPos, yPos, zPos]} rotation={[xRot, yRot, zRot]} intensity={1} />*/}
+            <directionalLight
+                position={[1.09, 0, 6.3]}
+            />
             <Laptop sectionName={activeSection}/>
         </Canvas>
     </div>
