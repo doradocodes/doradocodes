@@ -557,9 +557,28 @@ export const professionalProjects = {
         name: 'Square',
         imageUrl: 'square_1.png',
         summary: <p>
-            At Square, I worked closely with the Marketing Creative team to implement new features and pages for the squareup.com website.
+            At Square, I worked closely with the Marketing Creative team to implement new features and pages for the squareup.com website. Below are some of the pages I worked on.
         </p>,
         sections: [{
+            title: 'Campaigns',
+            content: <div className="flex-wrapper">
+                <div>
+                    <img src="assets/square_1.png" alt="Squareup.com"/>
+                    <a href="https://squareup.com/ie/en/campaign/everything-almost">View</a>
+                </div>
+                <div>
+                    <img src="assets/square-2.png" alt="Squareup.com"/>
+                    <a href="https://squareup.com/us/en/solutions/business-needs">View</a>
+                </div>
+                <div>
+                    <img src="assets/square-3.png" alt="Squareup.com"/>
+                    <a href="https://squareup.com/jp/ja/campaign/10-anniversary">View</a>
+                </div>
+                <div>
+                    <img src="assets/square-4.png" alt="Squareup.com"/>
+                    <a href="https://squareup.com/us/en/events/future-of-commerce">View</a>
+                </div>
+            </div>
         }],
     }
 }
