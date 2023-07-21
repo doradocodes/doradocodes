@@ -21,7 +21,6 @@ export default function Projects() {
         <div className={classNames("content", styles.content)}>
             <div className={styles.jumpLinks}>
                 <a className="textLink" onClick={(e) => executeScroll(e, professionalProjectRef)}>Professional projects</a>
-
                 <a className="textLink" onClick={(e) => executeScroll(e, creativeProjectRef)}>Creative projects</a>
             </div>
             <section className={styles.section} id="professional-projects" ref={professionalProjectRef}>

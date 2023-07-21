@@ -456,8 +456,8 @@ export const creativeProjects = {
         }, {
             title: 'Technical Details',
             content: <p>
-                We used <a href="http://socket.io/">Socket.io</a> to integrate the realtime collaboration. For the class
-                photo gifs, Liz found the <a href="https://yahoo.github.io/gifshot/">Gifshot</a> library, which is an
+                We used <a target="_blank" href="http://socket.io/">Socket.io</a> to integrate the realtime collaboration. For the class
+                photo gifs, Liz found the <a target="_blank" href="https://yahoo.github.io/gifshot/">Gifshot</a> library, which is an
                 open-source library that uses your webcam to create gifs. For the book view, we used a library called <a
                 href="http://www.turnjs.com/">TurnJs</a>, another open-source library, which turns a block of html and
                 automatically puts it in a flippable book view. I imported jQuery to be able to use TurnJs, so Liz and I
@@ -489,19 +489,27 @@ export const professionalProjects = {
             content: <div className="flex-wrapper">
                 <div>
                     <img src="assets/square_1.png" alt="Squareup.com"/>
-                    <a href="https://squareup.com/ie/en/campaign/everything-almost">View</a>
+                    <a target="_blank" href="https://squareup.com/ie/en/campaign/everything-almost">View</a>
                 </div>
                 <div>
                     <img src="assets/square-2.png" alt="Squareup.com"/>
-                    <a href="https://squareup.com/us/en/solutions/business-needs">View</a>
+                    <a target="_blank" href="https://squareup.com/us/en/solutions/business-needs">View</a>
                 </div>
                 <div>
                     <img src="assets/square-3.png" alt="Squareup.com"/>
-                    <a href="https://squareup.com/jp/ja/campaign/10-anniversary">View</a>
+                    <a target="_blank" href="https://squareup.com/jp/ja/campaign/10-anniversary">View</a>
                 </div>
                 <div>
                     <img src="assets/square-4.png" alt="Squareup.com"/>
-                    <a href="https://squareup.com/us/en/events/future-of-commerce">View</a>
+                    <a target="_blank" href="https://squareup.com/us/en/events/future-of-commerce">View</a>
+                </div>
+                <div>
+                    <img src="assets/square-5.png" alt="Squareup.com"/>
+                    <a target="_blank" href="https://squareup.com/fr/fr/campaign/gerer-son-entreprise">View</a>
+                </div>
+                <div>
+                    <img src="assets/square-6.png" alt="Squareup.com"/>
+                    <a target="_blank" href="https://squareup.com/us/en/compare">View</a>
                 </div>
             </div>
         }],
@@ -511,7 +519,7 @@ export const professionalProjects = {
         link: <a target="_blank" href="https://www.kodakmoments.com/">Visit</a>,
         imageUrl: 'kodak_moments_1.png',
         summary: <p>
-            KodakMoments.com is a website where customers can create unique, personalized photo gifts for their loved ones. As the lead Front-end engineer, I was responsible for developing and maintaining all aspects of the website, including page layouts, product creation tools, and shopping carts. Displayed below is the flow to create a canvas print. The user uploads a photo and is taken to screen where the photo can be edited and previewed on the product. Visit this website at <a href="https://www.kodakmoments.com/"><b>kodakmoments.com</b></a>.
+            KodakMoments.com is a website where customers can create unique, personalized photo gifts for their loved ones. As the lead Front-end engineer, I was responsible for developing and maintaining all aspects of the website, including page layouts, product creation tools, and shopping carts. Displayed below is the flow to create a canvas print. The user uploads a photo and is taken to screen where the photo can be edited and previewed on the product. Visit this website at <a target="_blank" href="https://www.kodakmoments.com/"><b>kodakmoments.com</b></a>.
         </p>,
         sections: [{
             title: 'Sample Screens',
