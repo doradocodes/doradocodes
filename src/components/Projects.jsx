@@ -20,23 +20,10 @@ export default function Projects() {
     return <div className="page" id="projects">
         <div className={classNames("content", styles.content)}>
             <div className={styles.jumpLinks}>
-                <a className="textLink" onClick={(e) => executeScroll(e, creativeProjectRef)}>Creative projects</a>
                 <a className="textLink" onClick={(e) => executeScroll(e, professionalProjectRef)}>Professional projects</a>
+
+                <a className="textLink" onClick={(e) => executeScroll(e, creativeProjectRef)}>Creative projects</a>
             </div>
-            <section className={styles.section} id="creative-projects" ref={creativeProjectRef}>
-                <h1 className={styles.h1}>Creative Projects</h1>
-                <div className={styles.projects}>
-                    {
-                        Object.keys(creativeProjects).map((id, i) => {
-                            const project = creativeProjects[id];
-                            return <Link key={i} className={styles.project} to={`/projects/${id}`}>
-                              <img className={styles.projectImage} src={`/assets/${project.imageUrl}`} alt={project.name}/>
-                              <p className={styles.projectName}>{project.name}</p>
-                            </Link>
-                        })
-                    }
-                </div>
-            </section>
             <section className={styles.section} id="professional-projects" ref={professionalProjectRef}>
                 <h1 className={styles.h1}>Professional Projects</h1>
                 <div className={styles.projects}>
@@ -51,6 +38,21 @@ export default function Projects() {
                     }
                 </div>
             </section>
+            <section className={styles.section} id="creative-projects" ref={creativeProjectRef}>
+                <h1 className={styles.h1}>Creative Projects</h1>
+                <div className={styles.projects}>
+                    {
+                        Object.keys(creativeProjects).map((id, i) => {
+                            const project = creativeProjects[id];
+                            return <Link key={i} className={styles.project} to={`/projects/${id}`}>
+                              <img className={styles.projectImage} src={`/assets/${project.imageUrl}`} alt={project.name}/>
+                              <p className={styles.projectName}>{project.name}</p>
+                            </Link>
+                        })
+                    }
+                </div>
+            </section>
+
         </div>
     </div>;
 }
