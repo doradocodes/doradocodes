@@ -5,8 +5,8 @@ export default function Header() {
     return <header className={styles.header}>
         <div className={styles.navWrapper}>
             <div>
-                <Link to="/" className="textLink">
-                    <h1>Dora Do // <span className="grey">Creative Technologist</span></h1>
+                <Link to="/" className="textLink no-underline">
+                    Dora Do // <span className="grey">Creative Technologist</span>
                 </Link>
             </div>
             <nav>

@@ -2,9 +2,9 @@
     position: fixed;
     z-index: 3;
     top: 0;
-    width: 100%;
+    width: calc(100% - 4em);
     left: 0;
-    padding: 1em;
+    padding: 1em 2em;
     font-family: 'Space Grotesk', sans-serif;
 }
 
