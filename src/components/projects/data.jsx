@@ -113,6 +113,8 @@ export const creativeProjects = {
                         each new endeavor.</p>
                     <video src="assets/thesis_demo_final.mp4" controls/>
 
+                    <iframe src="https://player.vimeo.com/video/929108201?h=ace26168c7" width="100%" height="360" style={{marginTop: '50px'}}
+                            frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen></iframe>
                 </div>
             },
             {

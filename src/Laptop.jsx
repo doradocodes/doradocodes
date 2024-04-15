@@ -1,11 +1,45 @@
-import {useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import {useGLTF, useTexture} from "@react-three/drei";
 import {animated, useScroll} from '@react-spring/three'
 import Gradient from "./components/GradientBackground.jsx";
+import {useLoader} from "@react-three/fiber";
+import { TextureLoader } from 'three/src/loaders/TextureLoader'
+
 
 const gradient = new Gradient();
 export function Laptop({ sectionName }) {
-    const [scrollVal, setScrollVal] = useState(0); // [0, 1
+    // const materialRef = useRef(null);
+    //
+    // useEffect(() => {
+    //     if (materialRef.current) {
+    //         materialRef.current.needsUpdate = true;
+    //     }
+    // })
+
+    const [scrollVal, setScrollVal] = useState(0);
+
+    const [section1Texture, section2Texture, section3Texture, section4Texture] = useLoader(TextureLoader, [
+        `assets/section1.png`,
+        `assets/section2.png`,
+        `assets/section3.png`,
+        `assets/section4.png`,
+    ]);
+
+    const getTexture = (sectionName) => {
+        switch (sectionName) {
+            case 'section1':
+                return section1Texture;
+            case 'section2':
+                return section2Texture;
+            case 'section3':
+                return section3Texture;
+            case 'section4':
+                return section4Texture;
+            default:
+                return section1Texture;
+        }
+    }
+
     useScroll({
         onChange: ({ value: { scrollYProgress } }) => {
             const newVal = Math.PI * 6 * scrollYProgress;
@@ -15,8 +49,13 @@ export function Laptop({ sectionName }) {
     });
     const { nodes, materials } = useGLTF("laptop_11_test.glb");
 
-    const imageMap = useTexture(`assets/${sectionName}.png`)
+    // const imageMap = useTexture(`assets/${sectionName}.png`)
+    // imageMap.repeat.set(1,1);
+
+    const imageMap = getTexture(sectionName);
     imageMap.repeat.set(1,1);
+    // make image darker
+
     return (
             <animated.group
                 dispose={null}
@@ -39,7 +78,7 @@ export function Laptop({ sectionName }) {
                 />
                 <mesh position={[0,0.95,-0.95]} rotation={[-0.12,0,0]}>
                     <planeBufferGeometry attach="geometry" args={[2.6, 1.6]} />
-                    <meshPhongMaterial attach="material" map={imageMap} />
+                    <meshPhongMaterial attach="material" map={imageMap} onUpdate={self => self.needsUpdate = true}  />
                 </mesh>
             </animated.group>
 

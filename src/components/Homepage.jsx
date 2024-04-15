@@ -4,7 +4,9 @@ import classNames from "classnames";
 import {useEffect, useRef, useState} from "react";
 import {Link, useLocation} from "react-router-dom";
 import {Laptop} from "../Laptop.jsx";
-import {useTweaks} from "use-tweaks";
+import {useTexture} from "@react-three/drei";
+
+
 export default function Homepage() {
     const { pathname } = useLocation();
     const [activeSection, setActiveSection] = useState('section1');
@@ -53,6 +55,7 @@ export default function Homepage() {
         className={classNames('page', styles.page)}
         id="homepage"
     >
+
         <div className={classNames('content')}>
             <section className={styles.section} ref={section1Ref}>
                 <h1 className={classNames(styles.h1, styles.h1Desktop)}>Hi I’m Dora, a Creative Technologist based in NYC.</h1>
